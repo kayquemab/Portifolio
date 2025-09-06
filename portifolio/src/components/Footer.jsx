@@ -9,10 +9,12 @@ export default function Footer() {
       component="footer"
       sx={{
         width: "100%",
-        py: 3,
-        mt: 6,
-        textAlign: "center",
+        height: 56, // mesma altura do header
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
         borderTop: "1px solid #e0e0e0",
+        mt: 6,
       }}
     >
       <Typography sx={{ color: "#666", fontFamily: "Montserrat" }}>
