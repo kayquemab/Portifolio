@@ -10,11 +10,6 @@ export default function Page() {
   return (
     <>
 
-      <Head>
-        <title>Kayque Miqueias | Desenvolvedor FullStack</title>
-        <meta name="descrição" content="Portfólio de Kayque Miqueias" />
-      </Head>
-
       <main>
         <Home />
         <SobreMim />
