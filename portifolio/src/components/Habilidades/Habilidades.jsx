@@ -1,9 +1,9 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 import { FaHtml5, FaCss3Alt, FaJs, FaNodeJs, FaReact, FaBootstrap, FaPython, FaPhp, FaDocker, FaAndroid, FaSwift, FaVuejs } from 'react-icons/fa';
 import { SiTypescript, SiNextdotjs, SiTailwindcss, SiFirebase, SiMysql, SiPostman, SiFigma, SiVite, SiMaterialdesign, SiFramer, SiFlutter, SiReact } from 'react-icons/si';
-
-import { motion } from "framer-motion";
 
 export default function Habilidades() {
 
@@ -16,8 +16,8 @@ export default function Habilidades() {
     { name: 'Vue.js', icon: FaVuejs },
     { name: 'Tailwind', icon: SiTailwindcss },
     { name: 'Bootstrap', icon: FaBootstrap },
-    { name: 'Material Design', icon: SiMaterialdesign },
-    { name: 'Framer Motion', icon: SiFramer },
+    { name: ' Design', icon: SiMaterialdesign },
+    { name: 'Framer ', icon: SiFramer },
     { name: 'Vite', icon: SiVite },
     { name: 'Figma', icon: SiFigma },
   ];
@@ -33,69 +33,76 @@ export default function Habilidades() {
   ];
 
   const mobile = [
-    { name: 'React Native', icon: SiReact },
+    { name: ' Native', icon: SiReact },
     { name: 'Flutter', icon: SiFlutter },
     { name: 'Android', icon: FaAndroid },
     { name: 'iOS', icon: FaSwift },
     { name: 'Firebase', icon: SiFirebase },
   ];
 
+  const renderSkillCard = (skill) => {
+    const Icon = skill.icon;
+    return (
+      <div
+        key={skill.name}
+        className="dark:bg-neutral-800 p-5 rounded-xl flex flex-col items-center justify-center shadow-md"
+      >
+        <Icon size={40} />
+        <p className="mt-2 text-sm text-center">{skill.name}</p>
+      </div>
+    );
+  };
+
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center px-6 text-center">
+    
+    <section className="flex flex-col justify-center items-center text-center">
       <h2 className="text-3xl md:text-4xl font-bold text-white mb-12">Linguagens e Tecnologias</h2>
 
-
-      <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-8">
+      <div className=" flex flex-col lg:flex-row gap-15">
 
         {/* Front-End */}
-        <div>
-          <h3 className="text-xl font-semibold text-white mb-4 text-center">Front-End</h3>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-4">
-            {frontEnd.map((tech, index) => (
+        <div className="flex-1">
+          <h3 className="text-xl font-semibold mb-6 text-center text-white">Front-End</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 gap-4">
+            {frontEnd.map((skill) => (
               <motion.div
-                key={index}
-                className="dark:bg-neutral-800 p-6 rounded-xl flex flex-col items-center justify-center shadow-md"
-                whileHover={{ scale: 1.1, zIndex: 10, boxShadow: "0px 10px 20px rgba(0,0,0,0.3)" }}
-                transition={{ type: "spring", stiffness: 300 }}
+                key={skill.name}
+                whileHover={{ scale: 1.15 }} // aumenta o tamanho no hover
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-                <tech.icon size={50} />
-                <p className="mt-2 text-sm text-center">{tech.name}</p>
+                {renderSkillCard(skill)}
               </motion.div>
             ))}
           </div>
         </div>
 
         {/* Back-End */}
-        <div>
-          <h3 className="text-xl font-semibold text-white mb-4 text-center">Back-End</h3>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-4">
-            {backEnd.map((tech, index) => (
+        <div className="flex-1">
+          <h3 className="text-xl font-semibold mb-6 text-center text-white">Back-End</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 gap-4">
+            {backEnd.map((skill) => (
               <motion.div
-                key={index}
-                className="dark:bg-neutral-800 p-6 rounded-xl flex flex-col items-center justify-center shadow-md"
-                whileHover={{ scale: 1.1, zIndex: 10, boxShadow: "0px 10px 20px rgba(0,0,0,0.3)" }}
-                transition={{ type: "spring", stiffness: 300 }}
+                key={skill.name}
+                whileHover={{ scale: 1.15 }} // aumenta o tamanho no hover
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-                <tech.icon size={50} />
-                <p className="mt-2 text-sm text-center">{tech.name}</p>
+                {renderSkillCard(skill)}
               </motion.div>
             ))}
           </div>
         </div>
 
-        {/* Mobile */}
-        <div>
-          <h3 className="text-xl font-semibold text-white mb-4 text-center">Mobile</h3>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-4">
-            {mobile.map((tech, index) => (
+        {/* Moble */}
+        <div className="flex-1">
+          <h3 className="text-xl font-semibold mb-6 text-center text-white">Mobile</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 gap-4">
+            {mobile.map((skill) => (
               <motion.div
-                key={index}
-                className="dark:bg-neutral-800 p-6 rounded-xl flex flex-col items-center justify-center shadow-md"
-                whileHover={{ scale: 1.1, zIndex: 10, boxShadow: "0px 10px 20px rgba(0,0,0,0.3)" }}
-                transition={{ type: "spring", stiffness: 300 }}
+                key={skill.name}
+                whileHover={{ scale: 1.15 }} // aumenta o tamanho no hover
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-                <tech.icon size={50} />
-                <p className="mt-2 text-sm text-center">{tech.name}</p>
+                {renderSkillCard(skill)}
               </motion.div>
             ))}
           </div>
@@ -103,15 +110,7 @@ export default function Habilidades() {
 
       </div>
 
-
-
-
-
-
-
-
-
-
     </section>
+
   );
 }
