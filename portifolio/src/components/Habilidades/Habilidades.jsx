@@ -45,16 +45,20 @@ export default function Habilidades() {
     return (
       <div
         key={skill.name}
-        className="dark:bg-neutral-800 p-5 rounded-xl flex flex-col items-center justify-center shadow-md"
+        className="bg-neutral-800 p-5 rounded-xl flex flex-col items-center justify-center shadow-md"
       >
-        <Icon size={40} />
-        <p className="mt-2 text-sm text-center">{skill.name}</p>
+
+        <>
+          <Icon size={40} className="text-red-500" />
+          <p className="mt-2 text-sm text-center text-red-500">{skill.name}</p>
+        </>
+
       </div>
     );
   };
 
   return (
-    
+
     <section className="flex flex-col justify-center items-center text-center">
       <h2 className="text-3xl md:text-4xl font-bold text-white mb-12">Linguagens e Tecnologias</h2>
 
