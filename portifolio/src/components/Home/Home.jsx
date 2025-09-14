@@ -97,43 +97,55 @@ export default function Home() {
         <section className="min-h-screen flex flex-col justify-center items-center px-6 text-center">
 
             <div className="max-w-3xl flex flex-col items-center gap-6">
+
                 {/* Texto */}
                 <p className="text-white font-mono text-lg">{displayedText}|</p>
+
                 <h1 className="text-4xl md:text-5xl font-bold text-white">
                     Kayque Miqueias<br />
-                    Desenvolvedor FullStack
+                    Desenvolvedor Full-Stack
                 </h1>
+
                 <p className="text-gray-300 text-center">
-                    Sou apaixonado por desenvolvimento e estou construindo minha trajetória
-                    como desenvolvedor full-stack, unindo teoria e prática em projetos reais
-                    enquanto evoluo academicamente e profissionalmente.
+                    Apaixonado por desenvolvimento, construo minha trajetória como full-stack, unindo prática em projetos reais e evolução profissional.
                 </p>
 
                 {/* Botões */}
                 <div className="flex flex-wrap justify-center gap-4 mt-6">
+
+                    {/* Github */}
                     <Link
-                        href="https://github.com/seuusuario"
+                        href="https://github.com/kayquemab"
                         target="_blank"
-                        className="bg-transparent text-white px-6 py-3 rounded-lg transition-all duration-200 hover:text-blue-400"
+                        className="bg-transparent text-white px-6 py-3 rounded-lg 
+             transition-all duration-300 
+             hover:text-white hover:scale-110 hover:shadow-lg hover:-translate-y-1"
                     >
                         <Github />
                     </Link>
 
+                    {/* Linkedin */}
                     <Link
-                        href="https://www.linkedin.com/in/seuusuario"
+                        href="https://www.linkedin.com/in/kayque-miqueias-463581326/"
                         target="_blank"
-                        className="bg-transparent text-white px-6 py-3 rounded-lg transition-all duration-200 hover:text-blue-400"
+                        className="bg-transparent text-white px-6 py-3 rounded-lg 
+             transition-all duration-300 
+             hover:text-white hover:scale-110 hover:shadow-lg hover:-translate-y-1"
                     >
                         <Linkedin />
                     </Link>
 
+                    {/* Currículo */}
                     <Link
-                        href="/curriculo.pdf"
+                        href="/Currículo.pdf"
                         target="_blank"
-                        className="bg-transparent text-white px-6 py-3 rounded-lg transition-all duration-200 hover:text-blue-400"
+                        className="bg-transparent text-white px-6 py-3 rounded-lg 
+             transition-all duration-300 
+             hover:text-white hover:scale-110 hover:shadow-lg hover:-translate-y-1"
                     >
                         <FileText />
                     </Link>
+
                 </div>
 
             </div>

@@ -1,87 +1,91 @@
 "use client";
 
-import { FaHtml5, FaCss3Alt, FaJs, FaNodeJs, FaReact, FaBootstrap, FaPython, FaPhp, FaDocker } from 'react-icons/fa';
-import { SiTypescript, SiNextdotjs, SiTailwindcss, SiFirebase, SiMysql, SiPostman, SiFigma, SiVite, SiMaterialdesign, SiFramer } from 'react-icons/si';
-
-
-const projetos = [
-  {
-    title: "Meu Portfólio",
-    description: "Portfólio pessoal com projetos em destaque, foco em frontend moderno e design responsivo.",
-    image: "/images/portfolio.png", // substitua pelo caminho da imagem
-    live: "#", // link para o projeto online
-    github: "https://github.com/seuusuario/portfolio"
-  },
-  {
-    title: "PC Manager",
-    description: "Aplicativo desktop para controle de computadores com histórico.",
-    image: "/images/pcmanager.png",
-    live: null,
-    github: "https://github.com/seuusuario/pcmanager"
-  },
-  {
-    title: "Clone do Spotify",
-    description: "Clone visual do Spotify com player funcional e navegação entre playlists, usando as APIs oficiais.",
-    image: "/images/spotifyclone.png",
-    live: null,
-    github: "https://github.com/seuusuario/spotifyclone"
-  }
-];
+import { motion } from "framer-motion";
 
 export default function Projetos() {
 
-  const frontEnd = [
-    { name: 'HTML5', icon: FaHtml5 },
-
+  const cards = [
+    { title: "Card 1", description: "Descrição simples do primeiro card." },
+    { title: "Card 2", description: "Descrição simples do segundo card." },
+    { title: "Card 3", description: "Descrição simples do terceiro card." },
   ];
 
-  const backEnd = [
-    { name: 'Node.js', icon: FaNodeJs },
+  // Variants do framer-motion
+  const container = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.2, // anima cada card com atraso
+      },
+    },
+  };
 
-  ];
-
-  const mobile = [
-    { name: 'Node.js', icon: FaNodeJs },
-
-  ];
-
-  const renderCards = (items) => (
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-      {items.map((item) => (
-        <div key={item.name} className="bg-gray-800/60 rounded-lg p-4 flex flex-col items-center justify-center text-white hover:bg-gray-700 transition-all duration-200">
-          {item.icon}
-          <span className="mt-2">{item.name}</span>
-        </div>
-      ))}
-    </div>
-  );
+  const cardVariant = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
 
   return (
+    <>
 
-    <section className="min-h-screen flex flex-col justify-center items-center px-6 text-center">
+      <section className="min-h-screen flex flex-col justify-center items-center px-6 text-center">
 
-      <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">Meus Projetos</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">Meus Projetos</h2>
 
-      <div className="w-full max-w-6xl flex flex-col md:flex-row justify-center gap-10">
+        {/* Título */}
+        <p className="text-gray-300 mb-8 text-center">
+          Confira meus projetos e soluções criativas que desenvolvi.
+        </p>
 
-        <div className="flex-1">
-          <h3 className="text-xl font-semibold text-white mb-4">Front-End</h3>
-          {renderCards(frontEnd)}
-        </div>
+        <motion.div
+          className="flex flex-wrap gap-6 justify-center"
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          {cards.map((card, index) => (
 
-        <div className="flex-1">
-          <h3 className="text-xl font-semibold text-white mb-4">Back-End</h3>
-          {renderCards(backEnd)}
-        </div>
+            <motion.div
+              key={index}
+              className="bg-gray-700 text-white p-6 rounded-lg shadow-md w-100 h-full"
+              variants={cardVariant}
+            >
+              <h3 className="text-xl font-semibold mb-2">{card.title}</h3>
+              <p className="text-gray-300 text-sm">{card.description}</p>
+            </motion.div>
 
-        <div className="flex-1">
-          <h3 className="text-xl font-semibold text-white mb-4">Mobile</h3>
-          {renderCards(mobile)}
-        </div>
+          ))}
+        </motion.div>
 
-      </div>
+        {/* Botão */}
+        <button
+          type="button"
+          className="mt-8 px-6 py-3 bg-white text-gray-900 font-semibold rounded-lg
+             shadow-md transition-all duration-300
+             hover:bg-white hover:scale-105 hover:shadow-lg hover:-translate-y-1"
+        >
+          Ver todos os projetos
+        </button>
 
-    </section>
+      </section>
+
+    </>
 
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

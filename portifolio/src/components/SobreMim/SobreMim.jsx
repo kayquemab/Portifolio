@@ -8,24 +8,36 @@ export default function SobreMim() {
 
       <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">Sobre Mim</h2>
 
-      <div className="bg-black/50 backdrop-blur-md rounded-2xl p-8 flex flex-col md:flex-row items-center max-w-5xl gap-8 shadow-lg">
-
-        {/* Texto */}
-        <div className="flex-1 text-center md:text-left">
-          <p className="text-gray-300 mb-4">
-            Desenvolvedor fullstack focado em criar soluções eficientes. Experiência com lógica de programação, APIs e interfaces modernas.
+      <div
+        className="
+    w-full
+    pl-10 pr-4 py-3
+    rounded-lg
+    bg-transparent
+    border border-gray-700
+    text-white
+    focus:outline-none
+    focus:ring-2 focus:ring-gray-300 focus:ring-offset-1
+    placeholder-gray-400
+    transition-all duration-200
+    hover:border-gray-300
+  "
+      >
+        <div className="border-l-4 border-white pl-6">
+          <p className="text-lg text-gray-300 leading-relaxed mb-4">
+            Sou um desenvolvedor fullstack focado em criar soluções eficientes e bem estruturadas.
+            Tenho uma base sólida em lógica de programação, venho aplicando esses conhecimentos em
+            projetos práticos que envolvem desde APIs até interfaces modernas.
           </p>
-
-          <p className="text-gray-300">
-            Experiência com React, Tailwind, Node.js, Electron e bancos de dados (MongoDB, PostgreSQL). Desenvolvo dashboards, CRUDs e integrações com APIs, sempre priorizando performance e código claro.
+          <p className="text-lg text-gray-300 leading-relaxed">
+            Trabalho com React, Tailwind CSS, Node.js, Electron e bancos de dados como MongoDB e PostgreSQL.
+            Tenho experiência desenvolvendo dashboards, sistemas internos, CRUDs otimizados e integração com APIs REST,
+            sempre priorizando performance, clareza no código e uma ótima experiência para o usuário.
           </p>
-
         </div>
-
-
       </div>
 
-    </section>
+    </section >
 
   );
 }
