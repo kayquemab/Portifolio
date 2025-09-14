@@ -1,6 +1,6 @@
-import Header from "@/components/Header";
+import Header from "@/components/Header/Header";
 import "./globals.css";
-import Footer from "@/components/Footer";
+import SectionWrapper from "@/components/common/SectionWrapper";
 
 export const metadata = {
   title: "Kayque | Portifólio",
@@ -9,11 +9,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-br">
-      <Header/>
+
       <body>
+        <Header />
+        <SectionWrapper>
         {children}
+        </SectionWrapper>
       </body>
-      <Footer/>    
+
     </html>
   );
 }
