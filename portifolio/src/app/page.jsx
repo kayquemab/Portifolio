@@ -1,11 +1,11 @@
 "use client";
 
-import Contato from "@/components/Contato/Contato";
-import Habilidades from "@/components/Habilidades/Habilidades";
-import Header from "@/components/Header/Header";
-import Home from "@/components/Home/Home";
-import Projetos from "@/components/Projetos/Projetos";
-import SobreMim from "@/components/SobreMim/SobreMim";
+import Contato from "@/components/Contato";
+import Habilidades from "@/components/Habilidades";
+import Header from "@/components/Header";
+import Home from "@/components/Home";
+import Projetos from "@/components/Projetos";
+import SobreMim from "@/components/SobreMim";
 import { useRef } from "react";
 
 export default function Page() {

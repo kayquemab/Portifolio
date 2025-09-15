@@ -76,7 +76,7 @@ export default function Projetos() {
         {cards.map((card, index) => (
           <motion.div
             key={index}
-            className="bg-gray-700 text-white p-6 rounded-lg shadow-md w-72 h-full"
+            className="bg-neutral-800 text-white p-6 rounded-lg shadow-md w-72 h-full"
             variants={cardVariant}
           >
             <h3 className="text-xl font-semibold mb-2">{card.title}</h3>

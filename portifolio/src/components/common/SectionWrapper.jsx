@@ -3,13 +3,9 @@ import React from 'react';
 const SectionWrapper = ({ children }) => {
   return (
 
-    // <section
-    //   className="min-h-screen flex flex-col justify-center items-center px-6 text-center
-    // bg-neutral-900"
-    // >
-        <section
+    <section
       className="min-h-screen flex flex-col justify-center items-center px-6 text-center
-    bg-red-500"
+    bg-neutral-900"
     >
       {children}
     </section>
