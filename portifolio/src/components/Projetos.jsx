@@ -4,23 +4,49 @@ import { motion } from "framer-motion";
 
 export default function Projetos() {
 
-  const cards = [
-    {
-      title: "Dashboard de Vendas",
-      description:
-        "Sistema completo para análise de métricas e indicadores de vendas, com gráficos interativos.",
-    },
-    {
-      title: "Gerenciador de Tarefas",
-      description:
-        "Aplicação CRUD otimizada para controle de tarefas, com login seguro e persistência em banco.",
-    },
-    {
-      title: "Portfolio Pessoal",
-      description:
-        "Site responsivo com animações em Framer Motion e design moderno feito com Tailwind CSS.",
-    },
+  const projetos = [
+    { name: 'teste1' },
+    { name: 'teste2' },
+    { name: 'teste3' },
+    { name: 'teste4' },
+    { name: 'teste5' },
+    { name: 'teste6' },
   ];
+
+  // animação padrão para surgimento
+  const cardVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        delay: i * 0.1, // efeito em cascata
+        ease: "easeOut"
+      }
+    })
+  };
+
+  const renderSkillCard = (skill, i) => {
+    return (
+      <motion.div
+        key={skill.name}
+        className="bg-neutral-800 p-5 rounded-xl flex flex-col items-center justify-center shadow-md"
+        variants={cardVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        custom={i}
+        whileHover={{ scale: 1.15 }}
+        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+      >
+
+
+        <p className="mt-2 text-sm text-center text-white">{skill.name}</p>
+
+      </motion.div>
+    );
+  };
 
   return (
 
@@ -48,38 +74,43 @@ export default function Projetos() {
         Confira meus projetos e soluções criativas que desenvolvi.
       </motion.p>
 
-      {/* Grid de Cards */}
-      <motion.div
-        className="flex flex-wrap gap-6 justify-center"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.9, delay: 0.3 }}
-        viewport={{ once: true }}
-      >
-        {cards.map((card, index) => (
-          <div
-            key={index}
-            className="bg-neutral-800 text-white p-6 rounded-lg shadow-md w-72 h-full"
-          >
-            <h3 className="text-xl font-semibold mb-2">{card.title}</h3>
-            <p className="text-gray-300 text-sm">{card.description}</p>
-          </div>
-        ))}
-      </motion.div>
+      {/* Linguagens e tecnologias separadas por tipo */}
+      <div className="flex flex-col lg:flex-row gap-16 w-full">
 
-      {/* CTA */}
+        {/* Front-End */}
+        <div className="flex-1">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 gap-4">
+            {projetos.map((skill, i) => renderSkillCard(skill, i))}
+          </div>
+        </div>
+
+
+
+      </div>
+
+      {/* Botão */}
       <motion.a
         href="https://github.com/kayquemab?tab=repositories"
         target="_blank"
         rel="noopener noreferrer"
         className="mt-8 px-6 py-3 bg-white text-gray-900 font-semibold rounded-lg
-                   shadow-md transition-all duration-300 inline-block"
+             shadow-md inline-block transition-none" // evita conflito com Tailwind
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.9, delay: 0.5 }}
+        transition={{ type: "spring", stiffness: 70, damping: 15, delay: 0.3 }}
         viewport={{ once: true }}
-        whileHover={{ scale: 1.05, y: -3 }}
-        whileTap={{ scale: 0.97 }}
+        whileHover={{
+          scale: 1.12,
+          y: -6,
+          boxShadow: "0px 12px 25px rgba(0,0,0,0.35)",
+          transition: { duration: 0.15, ease: "easeOut" } // suave e rápida
+        }}
+        whileTap={{
+          scale: 0.96,
+          y: 0,
+          boxShadow: "0px 4px 10px rgba(0,0,0,0.25)",
+          transition: { duration: 0.1, ease: "easeIn" }
+        }}
       >
         Ver todos os projetos
       </motion.a>

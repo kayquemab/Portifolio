@@ -81,16 +81,32 @@ export default function Contato() {
         ></textarea>
 
         {/* Botão */}
-        <motion.button
-          type="submit"
-          className="w-full bg-gray-200 border-gray-700 text-gray-900 font-semibold py-3 rounded-lg
-             shadow-md transition-all duration-300
-             hover:bg-gray-200 hover:text-gray-900 hover:scale-105 hover:shadow-lg hover:-translate-y-1"
-          whileHover={{ scale: 1.05, y: -3 }}
-          whileTap={{ scale: 0.97 }}
+        <motion.a
+          href="https://github.com/kayquemab?tab=repositories"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-8 px-6 py-3 bg-white text-gray-900 font-semibold rounded-lg
+             shadow-md inline-block transition-none" // evita conflito com Tailwind
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ type: "spring", stiffness: 70, damping: 15, delay: 0.3 }}
+          viewport={{ once: true }}
+          whileHover={{
+            scale: 1.12,
+            y: -6,
+            boxShadow: "0px 12px 25px rgba(0,0,0,0.35)",
+            transition: { duration: 0.15, ease: "easeOut" } // suave e rápida
+          }}
+          whileTap={{
+            scale: 0.96,
+            y: 0,
+            boxShadow: "0px 4px 10px rgba(0,0,0,0.25)",
+            transition: { duration: 0.1, ease: "easeIn" }
+          }}
         >
           Enviar
-        </motion.button>
+        </motion.a>
+        
       </motion.form>
 
       {/* Botões animados */}
