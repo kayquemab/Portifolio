@@ -9,7 +9,8 @@ import { motion } from "framer-motion";
 export default function Contato() {
   return (
 
-    <section className="min-h-screen flex flex-col justify-center items-center px-6 text-center">
+    <section className="min-h-screen flex flex-col justify-center items-center px-6 text-center pb-20 md:pb-0 ">
+
       {/* Título */}
       <motion.h2
         className="text-3xl md:text-4xl font-bold text-white mb-8"
@@ -140,6 +141,7 @@ export default function Contato() {
           </motion.div>
         </div>
       </motion.div>
+
     </section>
 
   );

@@ -2,50 +2,53 @@
 
 import { motion } from "framer-motion";
 
-import {
-  FaHtml5, FaCss3Alt, FaJs, FaNodeJs, FaReact, FaBootstrap,
-  FaPython, FaPhp, FaDocker, FaAndroid, FaSwift, FaVuejs
-} from 'react-icons/fa';
+// Font Awesome (v6 para brands atuais)
+import { FaHtml5, FaReact, FaBootstrap } from "react-icons/fa"; // ok
+import { FaVuejs, FaAngular } from "react-icons/fa6";           // ok (FA v6)
 
-import {
-  SiTypescript, SiNextdotjs, SiTailwindcss, SiFirebase,
-  SiMysql, SiPostman, SiFigma, SiVite, SiMaterialdesign,
-  SiFramer, SiFlutter, SiReact
-} from 'react-icons/si';
+// Ionicons v5 (NÃO misturar com 'io')
+import { IoLogoCss3, IoLogoJavascript } from "react-icons/io5"; // <- ajuste aqui
+
+// Simple Icons (brands)
+import { SiTypescript, SiNextdotjs, SiVite, SiTailwindcss, SiMui } from "react-icons/si";
+
 
 export default function Habilidades() {
 
   const frontEnd = [
     { name: 'HTML5', icon: FaHtml5 },
-    { name: 'CSS3', icon: FaCss3Alt },
-    { name: 'JavaScript', icon: FaJs },
+    { name: 'CSS3', icon: IoLogoCss3 },
+    { name: 'JavaScript', icon: IoLogoJavascript },
     { name: 'TypeScript', icon: SiTypescript },
     { name: 'React', icon: FaReact },
     { name: 'Vue.js', icon: FaVuejs },
-    { name: 'Tailwind', icon: SiTailwindcss },
-    { name: 'Bootstrap', icon: FaBootstrap },
-    { name: 'Design', icon: SiMaterialdesign },
-    { name: 'Framer', icon: SiFramer },
+    { name: 'Angular.js', icon: FaAngular },
+    { name: 'Next.js', icon: SiNextdotjs },
     { name: 'Vite', icon: SiVite },
-    { name: 'Figma', icon: SiFigma },
+    { name: 'Tailwind CSS', icon: SiTailwindcss },
+    { name: 'Bootstrap', icon: FaBootstrap },
+    { name: 'MUI', icon: SiMui },
   ];
 
   const backEnd = [
-    { name: 'Node.js', icon: FaNodeJs },
-    { name: 'PHP', icon: FaPhp },
-    { name: 'Python', icon: FaPython },
-    { name: 'Firebase', icon: SiFirebase },
-    { name: 'MySQL', icon: SiMysql },
-    { name: 'Postman', icon: SiPostman },
-    { name: 'Docker', icon: FaDocker },
+    { name: 'Node', icon: FaHtml5 },
+    { name: 'PHP', icon: IoLogoCss3 },
+    { name: 'Python', icon: IoLogoJavascript },
+    { name: 'Laravel', icon: SiTypescript },
+    { name: 'Django', icon: FaReact },
+    { name: 'Express', icon: FaVuejs },
+    { name: 'MySQL', icon: FaAngular },
+    { name: 'PostgreSQL', icon: SiNextdotjs },
+    { name: 'MongoDB', icon: SiVite },
+
   ];
 
-  const mobile = [
-    { name: 'React Native', icon: SiReact },
-    { name: 'Flutter', icon: SiFlutter },
-    { name: 'Android', icon: FaAndroid },
-    { name: 'iOS', icon: FaSwift },
-    { name: 'Firebase', icon: SiFirebase },
+  const devOpsCloud = [
+    { name: 'Docker', icon: FaHtml5 },
+    { name: 'Google Cloud', icon: IoLogoCss3 },
+    { name: 'AWS', icon: IoLogoJavascript },
+    { name: 'Azure DevOps', icon: SiTypescript },
+
   ];
 
   // animação padrão para surgimento
@@ -83,7 +86,10 @@ export default function Habilidades() {
   };
 
   return (
-    <section className="flex flex-col justify-center items-center text-center">
+
+    <section className="min-h-screen flex flex-col justify-center items-center px-6 text-center pb-20 md:pb-0">
+
+      {/* Titulo */}
       <motion.h2
         className="text-3xl md:text-4xl font-bold text-white mb-12"
         initial={{ opacity: 0, y: -40 }}
@@ -94,8 +100,9 @@ export default function Habilidades() {
         Linguagens e Tecnologias
       </motion.h2>
 
+      {/* Linguagens e tecnologias separadas por tipo */}
       <div className="flex flex-col lg:flex-row gap-16 w-full">
-        
+
         {/* Front-End */}
         <div className="flex-1">
           <h3 className="text-xl font-semibold mb-6 text-center text-white">Front-End</h3>
@@ -112,15 +119,17 @@ export default function Habilidades() {
           </div>
         </div>
 
-        {/* Mobile */}
+        {/* DevOps e Cloud */}
         <div className="flex-1">
           <h3 className="text-xl font-semibold mb-6 text-center text-white">Mobile</h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 gap-4">
-            {mobile.map((skill, i) => renderSkillCard(skill, i))}
+            {devOpsCloud.map((skill, i) => renderSkillCard(skill, i))}
           </div>
         </div>
 
       </div>
+
     </section>
+
   );
 }

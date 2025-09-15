@@ -94,18 +94,20 @@ export default function Home() {
 
     return (
 
-        <section className="min-h-screen flex flex-col justify-center items-center px-6 text-center">
+        <section className="min-h-screen flex flex-col justify-center items-center px-6 text-center pb-20 md:pb-0">
 
             <div className="max-w-3xl flex flex-col items-center gap-6">
 
                 {/* Texto */}
                 <p className="text-white font-mono text-lg">{displayedText}|</p>
 
+                {/* Nome e função */}
                 <h1 className="text-4xl md:text-5xl font-bold text-white">
                     Kayque Miqueias<br />
                     Desenvolvedor Full-Stack
                 </h1>
 
+                {/* Descrição */}
                 <p className="text-gray-300 text-center">
                     Apaixonado por desenvolvimento, construo minha trajetória como full-stack, unindo prática em projetos reais e evolução profissional.
                 </p>

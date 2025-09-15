@@ -2,25 +2,8 @@
 
 import { motion } from "framer-motion";
 
-// Variantes para animações em grupo
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2, // atraso entre os cards
-    },
-  },
-};
-
-const cardVariant = {
-  hidden: { opacity: 0, y: 50 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.8 } },
-};
-
 export default function Projetos() {
 
-  // Seus cards fixos
   const cards = [
     {
       title: "Dashboard de Vendas",
@@ -41,7 +24,7 @@ export default function Projetos() {
 
   return (
 
-    <section className="min-h-screen flex flex-col justify-center items-center px-6 text-center">
+    <section className="min-h-screen flex flex-col justify-center items-center px-6 text-center pb-20 md:pb-0">
 
       {/* Título */}
       <motion.h2
@@ -56,7 +39,7 @@ export default function Projetos() {
 
       {/* Subtítulo */}
       <motion.p
-        className="text-gray-300 mb-8 text-center"
+        className="text-gray-300 mb-8 text-center max-w-2xl"
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, delay: 0.2 }}
@@ -65,34 +48,32 @@ export default function Projetos() {
         Confira meus projetos e soluções criativas que desenvolvi.
       </motion.p>
 
-      {/* Cards */}
+      {/* Grid de Cards */}
       <motion.div
         className="flex flex-wrap gap-6 justify-center"
-        variants={container}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.3 }}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.9, delay: 0.3 }}
+        viewport={{ once: true }}
       >
         {cards.map((card, index) => (
-          <motion.div
+          <div
             key={index}
             className="bg-neutral-800 text-white p-6 rounded-lg shadow-md w-72 h-full"
-            variants={cardVariant}
           >
             <h3 className="text-xl font-semibold mb-2">{card.title}</h3>
             <p className="text-gray-300 text-sm">{card.description}</p>
-          </motion.div>
+          </div>
         ))}
       </motion.div>
 
-      {/* Botão */}
+      {/* CTA */}
       <motion.a
         href="https://github.com/kayquemab?tab=repositories"
         target="_blank"
         rel="noopener noreferrer"
         className="mt-8 px-6 py-3 bg-white text-gray-900 font-semibold rounded-lg
-           shadow-md transition-all duration-300
-           hover:bg-white hover:scale-105 hover:shadow-lg hover:-translate-y-1 inline-block"
+                   shadow-md transition-all duration-300 inline-block"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, delay: 0.5 }}
@@ -102,7 +83,6 @@ export default function Projetos() {
       >
         Ver todos os projetos
       </motion.a>
-
 
     </section>
 
