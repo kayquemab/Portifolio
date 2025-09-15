@@ -12,6 +12,20 @@ import { IoLogoCss3, IoLogoJavascript } from "react-icons/io5"; // <- ajuste aqu
 // Simple Icons (brands)
 import { SiTypescript, SiNextdotjs, SiVite, SiTailwindcss, SiMui } from "react-icons/si";
 
+import { FaNodeJs } from "react-icons/fa6";
+import { FaPhp } from "react-icons/fa6";
+import { FaPython } from "react-icons/fa6";
+import { FaLaravel } from "react-icons/fa6";
+import { SiDjango } from "react-icons/si";
+import { SiExpress } from "react-icons/si";
+import { DiMysql } from "react-icons/di";
+import { DiPostgresql } from "react-icons/di";
+import { TbBrandMongodb } from "react-icons/tb";
+import { FiFramer } from "react-icons/fi";
+import { FaDocker } from "react-icons/fa";
+import { SiGooglecloud } from "react-icons/si";
+import { FaAws } from "react-icons/fa6";
+import { VscAzureDevops } from "react-icons/vsc";
 
 export default function Habilidades() {
 
@@ -28,26 +42,27 @@ export default function Habilidades() {
     { name: 'Tailwind CSS', icon: SiTailwindcss },
     { name: 'Bootstrap', icon: FaBootstrap },
     { name: 'MUI', icon: SiMui },
+    { name: 'Motion', icon: FiFramer },
   ];
 
   const backEnd = [
-    { name: 'Node', icon: FaHtml5 },
-    { name: 'PHP', icon: IoLogoCss3 },
-    { name: 'Python', icon: IoLogoJavascript },
-    { name: 'Laravel', icon: SiTypescript },
-    { name: 'Django', icon: FaReact },
-    { name: 'Express', icon: FaVuejs },
-    { name: 'MySQL', icon: FaAngular },
-    { name: 'PostgreSQL', icon: SiNextdotjs },
-    { name: 'MongoDB', icon: SiVite },
+    { name: 'Node', icon: FaNodeJs  },
+    { name: 'PHP', icon: FaPhp  },
+    { name: 'Python', icon: FaPython },
+    { name: 'Laravel', icon: FaLaravel },
+    { name: 'Django', icon: SiDjango },
+    { name: 'Express', icon: SiExpress  },
+    { name: 'MySQL', icon: DiMysql  },
+    { name: 'PostgreSQL', icon: DiPostgresql  },
+    { name: 'MongoDB', icon: TbBrandMongodb  },
 
   ];
 
   const devOpsCloud = [
-    { name: 'Docker', icon: FaHtml5 },
-    { name: 'Google Cloud', icon: IoLogoCss3 },
-    { name: 'AWS', icon: IoLogoJavascript },
-    { name: 'Azure DevOps', icon: SiTypescript },
+    { name: 'Docker', icon: FaDocker },
+    { name: 'Google Cloud', icon: SiGooglecloud },
+    { name: 'AWS', icon: FaAws },
+    { name: 'Azure DevOps', icon: VscAzureDevops },
 
   ];
 
@@ -79,8 +94,10 @@ export default function Habilidades() {
         whileHover={{ scale: 1.15 }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >
+
         <Icon size={40} className="text-white" />
         <p className="mt-2 text-sm text-center text-white">{skill.name}</p>
+
       </motion.div>
     );
   };
