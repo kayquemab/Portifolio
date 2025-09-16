@@ -8,9 +8,7 @@ export default function Projetos() {
     { name: 'teste1' },
     { name: 'teste2' },
     { name: 'teste3' },
-    { name: 'teste4' },
-    { name: 'teste5' },
-    { name: 'teste6' },
+
   ];
 
   // animação padrão para surgimento
@@ -27,11 +25,12 @@ export default function Projetos() {
     })
   };
 
+  // Card: Manutenção nele
   const renderSkillCard = (skill, i) => {
     return (
       <motion.div
         key={skill.name}
-        className="bg-neutral-800 p-5 rounded-xl flex flex-col items-center justify-center shadow-md"
+        className="bg-neutral-800 p-5 rounded-xl flex flex-col shadow-md"
         variants={cardVariants}
         initial="hidden"
         whileInView="visible"
@@ -41,8 +40,39 @@ export default function Projetos() {
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >
 
+        <>
 
-        <p className="mt-2 text-sm text-center text-white">{skill.name}</p>
+          <p className=" text-sm text-left text-white">{skill.name}</p>
+
+          <div class=" space-y-2">
+
+            <div class="flex gap-3 mt-4">
+
+              {/* Ver Projeto */}
+              <a
+                href="https://portfolio.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="px-3 py-1 rounded-lg bg-black text-white dark:bg-white dark:text-black text-sm hover:opacity-80 transition"
+              >
+                Ver Projeto
+              </a>
+
+              {/* Github */}
+              <a
+                href="https://github.com/vilippi/portfolio-vitorlippi"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="px-3 py-1 rounded-lg border dark:border-white/50 text-sm text-black dark:text-white hover:opacity-80 transition"
+              >
+                GitHub
+              </a>
+
+            </div>
+
+          </div>
+
+        </>
 
       </motion.div>
     );
@@ -74,19 +104,17 @@ export default function Projetos() {
         Confira meus projetos e soluções criativas que desenvolvi.
       </motion.p>
 
-      {/* Linguagens e tecnologias separadas por tipo */}
+      {/* Card de exibição */}
       <div className="flex flex-col lg:flex-row gap-16 w-full">
 
-        {/* Front-End */}
-        <div className="flex-1">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 gap-4">
-            {projetos.map((skill, i) => renderSkillCard(skill, i))}
-          </div>
+        <div className="flex-1 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 gap-4">
+          {projetos.map((skill, i) => renderSkillCard(skill, i))}
+
         </div>
 
-
-
       </div>
+
+
 
       {/* Botão */}
       <motion.a

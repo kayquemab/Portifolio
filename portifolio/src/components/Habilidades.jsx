@@ -138,7 +138,7 @@ export default function Habilidades() {
 
         {/* DevOps e Cloud */}
         <div className="flex-1">
-          <h3 className="text-xl font-semibold mb-6 text-center text-white">Mobile</h3>
+          <h3 className="text-xl font-semibold mb-6 text-center text-white">DevOps e Cloud</h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 gap-4">
             {devOpsCloud.map((skill, i) => renderSkillCard(skill, i))}
           </div>
