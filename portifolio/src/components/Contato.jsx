@@ -147,7 +147,7 @@ export default function Contato() {
           {/* E-mail */}
           <motion.div whileHover={{ scale: 1.2, y: -5 }}>
             <Link
-              href={`mailto:kayquemiqueias17@gmail.com?subject=Contato%20via%20Portfólio&body=Olá,%20tudo%20bem?%0D%0A%0D%0AGostaria%20de%20entrar%20em%20contato%20com%20você%20para%20discutir%20possíveis%20projetos%20ou%20colaborações.%20Ficarei%20feliz%20em%20conversar%20sobre%20como%20posso%20contribuir.`}
+              href={`mailto:kayquemiqueias17@gmail.com?subject=Contato%20via%20Portfólio&body=Olá,%20tudo%20bem?%0D%0A%0D%0AGostaria%20de%20entrar%20em%20contato%20com%20você%20para%20discutir%20possíveis%20projetos%20ou%20colaborações.`}
               className="bg-transparent text-white px-6 py-3 rounded-lg 
              transition-all duration-300 
              hover:text-white flex items-center justify-center"
