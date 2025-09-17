@@ -40,36 +40,32 @@ export default function Projetos() {
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >
 
+        {/* Titulo + Botões */}
         <>
 
           <p className=" text-sm text-left text-white">{skill.name}</p>
 
-          <div class=" space-y-2">
-
-            <div class="flex gap-3 mt-4">
-
-              {/* Ver Projeto */}
+          {/* Botões */}
+          <div className="space-y-2">
+            <div className="flex gap-3 mt-4 justify-center">
               <a
                 href="https://portfolio.vercel.app"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="px-3 py-1 rounded-lg bg-black text-white dark:bg-white dark:text-black text-sm hover:opacity-80 transition"
+                className="px-4 py-2 text-center rounded-lg bg-black text-white dark:bg-white dark:text-black text-sm hover:opacity-80 transition flex-shrink-0"
               >
                 Ver Projeto
               </a>
 
-              {/* Github */}
               <a
                 href="https://github.com/vilippi/portfolio-vitorlippi"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="px-3 py-1 rounded-lg border dark:border-white/50 text-sm text-black dark:text-white hover:opacity-80 transition"
+                className="px-4 py-2 text-center rounded-lg border dark:border-white/50 text-sm text-black dark:text-white hover:opacity-80 transition flex-shrink-0"
               >
                 GitHub
               </a>
-
             </div>
-
           </div>
 
         </>
@@ -105,16 +101,9 @@ export default function Projetos() {
       </motion.p>
 
       {/* Card de exibição */}
-      <div className="flex flex-col lg:flex-row gap-16 w-full">
-
-        <div className="flex-1 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 gap-4">
-          {projetos.map((skill, i) => renderSkillCard(skill, i))}
-
-        </div>
-
+      <div className="w-full grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4">
+        {projetos.map((skill, i) => renderSkillCard(skill, i))}
       </div>
-
-
 
       {/* Botão */}
       <motion.a
