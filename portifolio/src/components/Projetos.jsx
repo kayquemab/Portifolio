@@ -5,80 +5,50 @@ import { motion } from "framer-motion";
 export default function Projetos() {
 
   const projetos = [
-    { name: 'teste1' },
+    {
+      name: "Projeto: Costs",
+      site: "https://projeto-costs-two.vercel.app/",
+      github: "https://github.com/kayquemab/Projeto_Costs",
+      video: "/video_costs.mp4",
+    },
+    {
+      name: "Projeto: Costs",
+      site: "https://projeto-costs-two.vercel.app/",
+      github: "https://github.com/kayquemab/Projeto_Costs",
+      video: "/video_costs.mp4",
+    },
+    {
+      name: "Projeto: Costs",
+      site: "https://projeto-costs-two.vercel.app/",
+      github: "https://github.com/kayquemab/Projeto_Costs",
+      video: "/video_costs.mp4",
+    },
+    {
+      name: "Projeto: Costs",
+      site: "https://projeto-costs-two.vercel.app/",
+      github: "https://github.com/kayquemab/Projeto_Costs",
+      video: "/video_costs.mp4",
+    },
+    {
+      name: "Projeto: Costs",
+      site: "https://projeto-costs-two.vercel.app/",
+      github: "https://github.com/kayquemab/Projeto_Costs",
+      video: "/video_costs.mp4",
+    },
 
   ];
 
-  // animação padrão para surgimento
+
+  // Variantes de animação
   const cardVariants = {
-    hidden: { opacity: 0, y: 40 },
+    hidden: { opacity: 0, y: 20 },
     visible: (i) => ({
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.6,
-        delay: i * 0.1, // efeito em cascata
-        ease: "easeOut"
-      }
-    })
+      transition: { delay: i * 0.2, type: "spring", stiffness: 300, damping: 20 },
+    }),
   };
 
-  // Card: Manutenção nele
-  const renderSkillCard = (skill, i) => {
-
-    return (
-
-      <motion.div
-        key={skill.name}
-        className="bg-neutral-800 p-5 rounded-xl flex flex-col shadow-md"
-        variants={cardVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        custom={i}
-        whileHover={{ scale: 1.15 }}
-        transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      >
-
-        {/* Titulo + Botões */}
-        <>
-
-          <p className=" text-sm text-left text-white">{skill.name}</p>
-
-          {/* Botões */}
-          <div className="space-y-2">
-            <div className="flex gap-3 mt-4 justify-center">
-
-              {/* Ver Projeto */}
-              <a
-                href="https://portfolio.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2 text-center rounded-lg bg-white text-black text-sm hover:opacity-80 transition flex-shrink-0"
-              >
-                Ver Projeto
-              </a>
-
-              {/* Github */}
-              <a
-                href="https://github.com/vilippi/portfolio-vitorlippi"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2 text-center rounded-lg border text-sm text-white hover:opacity-80 transition flex-shrink-0"
-              >
-                GitHub
-              </a>
-
-            </div>
-          </div>
-
-        </>
-
-      </motion.div>
-
-    );
-
-  };
 
   return (
 
@@ -114,16 +84,65 @@ export default function Projetos() {
       </motion.p>
 
       {/* Card de exibição */}
-      <div className="w-full grid gap-4
-      
-      grid-cols-1
-      sm:grid-cols-2
-      md:grid-cols-3
-      lg:grid-cols-4
-      xl:grid-cols-5
-      
-      ">
-        {projetos.map((skill, i) => renderSkillCard(skill, i))}
+      <div className="flex flex-wrap gap-4 justify-center">
+
+        {projetos.map((proj, i) => (
+
+          <motion.div
+            key={proj.name}
+            className="flex-1 min-w-[280px] max-w-[360px] bg-neutral-800 p-5 rounded-xl flex flex-col shadow-md"
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={i}
+            whileHover={{ scale: 1.05 }}
+          >
+
+            <div className="bg-white dark:bg-white/5 border dark:border-white/10 rounded-2xl shadow-md overflow-hidden backdrop-blur-md">
+              <div className="p-4 space-y-2">
+
+                {/* Vídeo do projeto */}
+                {proj.video && (
+                  <video
+                    src={proj.video}
+                    controls
+                    className="w-full h-auto rounded-md mb-4 object-cover"
+                  />
+                )}
+
+                {/* Nome do projeto */}
+                <h3 className="text-lg font-semibold dark:text-white">{proj.name}</h3>
+
+                {/* Botões */}
+                <div className="flex gap-3 mt-4">
+                  {proj.site && (
+                    <a
+                      href={proj.site}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-3 py-1 rounded-lg bg-black text-white dark:bg-white dark:text-black text-sm hover:opacity-80 transition"
+                    >
+                      Ver Projeto
+                    </a>
+                  )}
+
+                  {proj.github && (
+                    <a
+                      href={proj.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-3 py-1 rounded-lg border dark:border-white/50 text-sm text-black dark:text-white hover:opacity-80 transition"
+                    >
+                      GitHub
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        ))}
+
       </div>
 
       {/* Botão */}
