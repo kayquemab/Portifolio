@@ -2,16 +2,10 @@
 
 import { motion } from "framer-motion";
 
-// Font Awesome (v6 para brands atuais)
-import { FaHtml5, FaReact, FaBootstrap } from "react-icons/fa"; // ok
-import { FaVuejs, FaAngular } from "react-icons/fa6";           // ok (FA v6)
-
-// Ionicons v5 (NÃO misturar com 'io')
-import { IoLogoCss3, IoLogoJavascript } from "react-icons/io5"; // <- ajuste aqui
-
-// Simple Icons (brands)
+import { FaHtml5, FaReact, FaBootstrap } from "react-icons/fa";
+import { FaVuejs, FaAngular } from "react-icons/fa6";
+import { IoLogoCss3, IoLogoJavascript } from "react-icons/io5";
 import { SiTypescript, SiNextdotjs, SiVite, SiTailwindcss, SiMui } from "react-icons/si";
-
 import { FaNodeJs } from "react-icons/fa6";
 import { FaPhp } from "react-icons/fa6";
 import { FaPython } from "react-icons/fa6";
@@ -82,7 +76,9 @@ export default function Habilidades() {
 
   const renderSkillCard = (skill, i) => {
     const Icon = skill.icon;
+
     return (
+
       <motion.div
         key={skill.name}
         className="bg-neutral-800 p-5 rounded-xl flex flex-col items-center justify-center shadow-md"
@@ -99,13 +95,22 @@ export default function Habilidades() {
         <p className="mt-2 text-sm text-center text-white">{skill.name}</p>
 
       </motion.div>
+
     );
+
   };
 
   return (
 
-    <section className="min-h-screen flex flex-col justify-center items-center px-6 text-center pb-20 md:pb-0">
-
+    <section className="
+  min-h-screen 
+  flex flex-col justify-center items-center 
+  px-4 sm:px-6 md:px-10 lg:px-16 xl:px-24 2xl:px-32
+  text-center 
+  pb-16 sm:pb-20 md:pb-24 lg:pb-32
+  pt-16 sm:pt-20 md:pt-24 lg:pt-32
+">
+    
       {/* Titulo */}
       <motion.h2
         className="text-3xl md:text-4xl font-bold text-white mb-12"
@@ -149,4 +154,5 @@ export default function Habilidades() {
     </section>
 
   );
+
 }

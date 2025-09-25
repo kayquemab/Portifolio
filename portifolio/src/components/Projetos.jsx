@@ -6,8 +6,6 @@ export default function Projetos() {
 
   const projetos = [
     { name: 'teste1' },
-    { name: 'teste2' },
-    { name: 'teste3' },
 
   ];
 
@@ -84,7 +82,14 @@ export default function Projetos() {
 
   return (
 
-    <section className="min-h-screen flex flex-col justify-center items-center px-6 text-center pb-20 md:pb-0">
+    <section className="
+  min-h-screen 
+  flex flex-col justify-center items-center 
+  px-4 sm:px-6 md:px-10 lg:px-16 xl:px-24 2xl:px-32
+  text-center 
+  pb-16 sm:pb-20 md:pb-24 lg:pb-32
+  pt-16 sm:pt-20 md:pt-24 lg:pt-32
+">
 
       {/* Título */}
       <motion.h2

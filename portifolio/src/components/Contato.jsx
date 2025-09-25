@@ -1,15 +1,23 @@
 "use client";
 
-import { Github, Linkedin, Mail } from "lucide-react"; // ícones
-import Link from "next/link"; // Link do Next.js
+import { Github, Linkedin, Mail } from "lucide-react";
+import Link from "next/link";
 import { FaEnvelope, FaUser } from "react-icons/fa";
 
 import { motion } from "framer-motion";
 
 export default function Contato() {
+
   return (
 
-    <section className="min-h-screen flex flex-col justify-center items-center px-6 text-center pb-20 md:pb-0 ">
+    <section className="
+  min-h-screen 
+  flex flex-col justify-center items-center 
+  px-4 sm:px-6 md:px-10 lg:px-16 xl:px-24 2xl:px-32
+  text-center 
+  pb-16 sm:pb-20 md:pb-24 lg:pb-32
+  pt-16 sm:pt-20 md:pt-24 lg:pt-32
+">
 
       {/* Título */}
       <motion.h2
@@ -41,51 +49,60 @@ export default function Contato() {
         transition={{ duration: 0.9, delay: 0.3 }}
         viewport={{ once: true }}
       >
+
         {/* Nome */}
         <div className="relative">
           <FaUser className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
+
           <input
             id="nome"
             type="text"
-            placeholder="Digite seu nome"
+            placeholder="Digite seu nome:"
             className="w-full pl-10 pr-4 py-3 rounded-lg bg-transparent border border-gray-700 text-white
                  focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-1
                  placeholder-gray-400 transition-all duration-200
                  hover:border-gray-300"
           />
+
         </div>
 
         {/* E-mail */}
         <div className="relative">
           <FaEnvelope className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
+
           <input
             id="email"
             type="email"
-            placeholder="Digite seu email"
+            placeholder="Digite seu email:"
             className="w-full pl-10 pr-4 py-3 rounded-lg bg-transparent border border-gray-700 text-white
                  focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-1
                  placeholder-gray-400 transition-all duration-200
                  hover:border-gray-300"
           />
+
         </div>
 
         {/* Mensagem */}
-        <textarea
-          id="mensagem"
-          placeholder="Escreva sua mensagem"
-          rows="5"
-          className="w-full px-4 py-3 rounded-lg bg-transparent border border-gray-700 text-white
+        <div className="relative">
+
+          <textarea
+            id="mensagem"
+            placeholder="Escreva sua mensagem:"
+            rows="5"
+            className="w-full px-4 py-3 rounded-lg bg-transparent border border-gray-700 text-white
                focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-1
                placeholder-gray-400 transition-all duration-200 resize-none
                hover:border-gray-300"
-        ></textarea>
+          />
+
+        </div>
 
         {/* Botão */}
         <motion.a
           href="https://github.com/kayquemab?tab=repositories"
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-8 px-6 py-3 bg-white text-gray-900 font-semibold rounded-lg
+          className="px-6 py-3 bg-white text-gray-900 font-semibold rounded-lg
              shadow-md inline-block transition-none" // evita conflito com Tailwind
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -106,7 +123,7 @@ export default function Contato() {
         >
           Enviar
         </motion.a>
-        
+
       </motion.form>
 
       {/* Botões animados */}
@@ -117,7 +134,9 @@ export default function Contato() {
         transition={{ duration: 0.9, delay: 0.6 }}
         viewport={{ once: true }}
       >
+
         <div className="flex flex-wrap justify-center gap-4">
+
           {/* Github */}
           <motion.div whileHover={{ scale: 1.2, y: -5 }}>
             <Link
@@ -155,10 +174,13 @@ export default function Contato() {
               <Mail size={24} />
             </Link>
           </motion.div>
+
         </div>
+
       </motion.div>
 
     </section>
 
   );
+
 }

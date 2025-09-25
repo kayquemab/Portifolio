@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 export default function Home() {
 
     const phrases = [
+
         // 🔹 JavaScript
         'console.log("Hello World")',
 
@@ -69,12 +70,14 @@ export default function Home() {
 
         // 🔹 Google Cloud / AWS / Azure (Função serverless exemplo)
         'exports.helloWorld = (req, res) => { res.send("Hello World"); };',
+
     ];
 
     const [displayedText, setDisplayedText] = useState("");
     const [phraseIndex, setPhraseIndex] = useState(0);
     const [charIndex, setCharIndex] = useState(0);
 
+    // Função para o efeito dos "Hello World's"
     useEffect(() => {
         const interval = setInterval(() => {
             const currentPhrase = phrases[phraseIndex];
@@ -94,7 +97,14 @@ export default function Home() {
 
     return (
 
-        <section className="min-h-screen flex flex-col justify-center items-center px-6 text-center pb-20 md:pb-0">
+        <section className="
+  min-h-screen 
+  flex flex-col justify-center items-center 
+  px-4 sm:px-6 md:px-10 lg:px-16 xl:px-24 2xl:px-32
+  text-center 
+  pb-16 sm:pb-20 md:pb-24 lg:pb-32
+  pt-16 sm:pt-20 md:pt-24 lg:pt-32
+">
 
             <div className="max-w-3xl flex flex-col items-center gap-6">
 
@@ -155,4 +165,5 @@ export default function Home() {
         </section>
 
     );
+
 }

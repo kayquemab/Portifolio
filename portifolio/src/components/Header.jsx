@@ -1,19 +1,22 @@
 "use client";
 
 export default function Header({ scrollToSection }) {
+  
   return (
-    
+
     <header className="fixed top-0 left-0 w-full z-50 bg-transparent">
 
       <nav className="max-w-7xl mx-auto px-6 py-5 flex justify-center md:justify-between items-center">
 
         {/* Logo */}
         <h1 className="text-xl font-semibold tracking-tight text-white dark:text-white font-sans">
+
           {/* No mobile, o nome some */}
           <span className="block md:hidden"></span>
 
           {/* Desktop: nome completo */}
           <span className="hidden md:block">Kayque Miqueias</span>
+
         </h1>
 
         {/* Links */}
@@ -54,5 +57,7 @@ export default function Header({ scrollToSection }) {
       </nav>
 
     </header>
+
   );
+
 }
