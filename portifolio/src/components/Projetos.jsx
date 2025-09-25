@@ -27,7 +27,9 @@ export default function Projetos() {
 
   // Card: Manutenção nele
   const renderSkillCard = (skill, i) => {
+
     return (
+
       <motion.div
         key={skill.name}
         className="bg-neutral-800 p-5 rounded-xl flex flex-col shadow-md"
@@ -48,30 +50,36 @@ export default function Projetos() {
           {/* Botões */}
           <div className="space-y-2">
             <div className="flex gap-3 mt-4 justify-center">
+
+              {/* Ver Projeto */}
               <a
                 href="https://portfolio.vercel.app"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 text-center rounded-lg bg-black text-white dark:bg-white dark:text-black text-sm hover:opacity-80 transition flex-shrink-0"
+                className="px-4 py-2 text-center rounded-lg bg-white text-black text-sm hover:opacity-80 transition flex-shrink-0"
               >
                 Ver Projeto
               </a>
 
+              {/* Github */}
               <a
                 href="https://github.com/vilippi/portfolio-vitorlippi"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 text-center rounded-lg border dark:border-white/50 text-sm text-black dark:text-white hover:opacity-80 transition flex-shrink-0"
+                className="px-4 py-2 text-center rounded-lg border text-sm text-white hover:opacity-80 transition flex-shrink-0"
               >
                 GitHub
               </a>
+
             </div>
           </div>
 
         </>
 
       </motion.div>
+
     );
+
   };
 
   return (
@@ -101,7 +109,15 @@ export default function Projetos() {
       </motion.p>
 
       {/* Card de exibição */}
-      <div className="w-full grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4">
+      <div className="w-full grid gap-4
+      
+      grid-cols-1
+      sm:grid-cols-2
+      md:grid-cols-3
+      lg:grid-cols-4
+      xl:grid-cols-5
+      
+      ">
         {projetos.map((skill, i) => renderSkillCard(skill, i))}
       </div>
 

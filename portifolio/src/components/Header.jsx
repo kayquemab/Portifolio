@@ -8,7 +8,7 @@ export default function Header({ scrollToSection }) {
       <nav className="max-w-7xl mx-auto px-6 py-5 flex justify-center md:justify-between items-center">
 
         {/* Logo */}
-        <h1 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white font-sans">
+        <h1 className="text-xl font-semibold tracking-tight text-white dark:text-white font-sans">
           {/* No mobile, o nome some */}
           <span className="block md:hidden"></span>
 
@@ -17,7 +17,7 @@ export default function Header({ scrollToSection }) {
         </h1>
 
         {/* Links */}
-        <ul className="flex items-center gap-6 text-sm font-medium text-gray-700 dark:text-gray-200 font-sans">
+        <ul className="flex items-center gap-6 text-sm font-medium text-gray-200 dark:text-gray-200 font-sans">
 
           {/* Apresentação */}
           <li>
