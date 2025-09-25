@@ -35,9 +35,25 @@ export default function Projetos() {
       github: "https://github.com/kayquemab/Projeto_Costs",
       video: "/video_costs.mp4",
     },
-
+    {
+      name: "Projeto: Costs",
+      site: "https://projeto-costs-two.vercel.app/",
+      github: "https://github.com/kayquemab/Projeto_Costs",
+      video: "/video_costs.mp4",
+    },
+    {
+      name: "Projeto: Costs",
+      site: "https://projeto-costs-two.vercel.app/",
+      github: "https://github.com/kayquemab/Projeto_Costs",
+      video: "/video_costs.mp4",
+    },
+    {
+      name: "Projeto: Costs",
+      site: "https://projeto-costs-two.vercel.app/",
+      github: "https://github.com/kayquemab/Projeto_Costs",
+      video: "/video_costs.mp4",
+    },
   ];
-
 
   // Variantes de animação
   const cardVariants = {
@@ -48,7 +64,6 @@ export default function Projetos() {
       transition: { delay: i * 0.2, type: "spring", stiffness: 300, damping: 20 },
     }),
   };
-
 
   return (
 
