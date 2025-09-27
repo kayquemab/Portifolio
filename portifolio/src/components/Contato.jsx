@@ -98,12 +98,10 @@ export default function Contato() {
         </div>
 
         {/* Botão */}
-        <motion.a
-          href="https://github.com/kayquemab?tab=repositories"
-          target="_blank"
-          rel="noopener noreferrer"
+        <motion.button
+          type="button"
           className="px-6 py-3 bg-white text-gray-900 font-semibold rounded-lg
-             shadow-md inline-block transition-none" // evita conflito com Tailwind
+             shadow-md inline-block transition-none"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ type: "spring", stiffness: 70, damping: 15, delay: 0.3 }}
@@ -112,7 +110,7 @@ export default function Contato() {
             scale: 1.12,
             y: -6,
             boxShadow: "0px 12px 25px rgba(0,0,0,0.35)",
-            transition: { duration: 0.15, ease: "easeOut" } // suave e rápida
+            transition: { duration: 0.15, ease: "easeOut" }
           }}
           whileTap={{
             scale: 0.96,
@@ -120,9 +118,19 @@ export default function Contato() {
             boxShadow: "0px 4px 10px rgba(0,0,0,0.25)",
             transition: { duration: 0.1, ease: "easeIn" }
           }}
+          onClick={() => {
+            const nome = document.getElementById("nome").value;
+            const email = document.getElementById("email").value;
+            const mensagem = document.getElementById("mensagem").value;
+
+            const subject = encodeURIComponent(`Contato de ${nome}`);
+            const body = encodeURIComponent(`Nome: ${nome}\nEmail: ${email}\n\nMensagem:\n${mensagem}`);
+
+            window.location.href = `mailto:kayquemiqueias17@gmail.com?subject=${subject}&body=${body}`;
+          }}
         >
           Enviar
-        </motion.a>
+        </motion.button>
 
       </motion.form>
 

@@ -11,48 +11,7 @@ export default function Projetos() {
       github: "https://github.com/kayquemab/Projeto_Costs",
       video: "/video_costs.mp4",
     },
-    {
-      name: "Projeto: Costs",
-      site: "https://projeto-costs-two.vercel.app/",
-      github: "https://github.com/kayquemab/Projeto_Costs",
-      video: "/video_costs.mp4",
-    },
-    {
-      name: "Projeto: Costs",
-      site: "https://projeto-costs-two.vercel.app/",
-      github: "https://github.com/kayquemab/Projeto_Costs",
-      video: "/video_costs.mp4",
-    },
-    {
-      name: "Projeto: Costs",
-      site: "https://projeto-costs-two.vercel.app/",
-      github: "https://github.com/kayquemab/Projeto_Costs",
-      video: "/video_costs.mp4",
-    },
-    {
-      name: "Projeto: Costs",
-      site: "https://projeto-costs-two.vercel.app/",
-      github: "https://github.com/kayquemab/Projeto_Costs",
-      video: "/video_costs.mp4",
-    },
-    {
-      name: "Projeto: Costs",
-      site: "https://projeto-costs-two.vercel.app/",
-      github: "https://github.com/kayquemab/Projeto_Costs",
-      video: "/video_costs.mp4",
-    },
-    {
-      name: "Projeto: Costs",
-      site: "https://projeto-costs-two.vercel.app/",
-      github: "https://github.com/kayquemab/Projeto_Costs",
-      video: "/video_costs.mp4",
-    },
-    {
-      name: "Projeto: Costs",
-      site: "https://projeto-costs-two.vercel.app/",
-      github: "https://github.com/kayquemab/Projeto_Costs",
-      video: "/video_costs.mp4",
-    },
+
   ];
 
   // Variantes de animação
@@ -99,13 +58,12 @@ export default function Projetos() {
       </motion.p>
 
       {/* Card de exibição */}
-      <div className="flex flex-wrap gap-4 justify-center">
+      <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5">
 
         {projetos.map((proj, i) => (
-
           <motion.div
             key={proj.name}
-            className="flex-1 min-w-[280px] max-w-[360px] bg-neutral-800 p-5 rounded-xl flex flex-col shadow-md"
+            className="bg-neutral-800 rounded-xl shadow-md overflow-hidden flex flex-col"
             variants={cardVariants}
             initial="hidden"
             whileInView="visible"
@@ -114,23 +72,27 @@ export default function Projetos() {
             whileHover={{ scale: 1.05 }}
           >
 
-            <div className="bg-white dark:bg-white/5 border dark:border-white/10 rounded-2xl shadow-md overflow-hidden backdrop-blur-md">
-              <div className="p-4 space-y-2">
+            <div className="bg-white dark:bg-white/5 border dark:border-white/10 rounded-2xl shadow-md overflow-hidden backdrop-blur-md flex flex-col h-full">
+              
+              <div className="p-4 flex flex-col h-full">
 
                 {/* Vídeo do projeto */}
                 {proj.video && (
                   <video
                     src={proj.video}
                     controls
-                    className="w-full h-auto rounded-md mb-4 object-cover"
+                    className="w-full h-40 rounded-md mb-4 object-cover"
                   />
                 )}
 
                 {/* Nome do projeto */}
-                <h3 className="text-lg font-semibold dark:text-white">{proj.name}</h3>
+                <h3 className="text-lg font-semibold dark:text-white flex-grow">
+                  {proj.name}
+                </h3>
 
-                {/* Botões */}
+                {/* Botões (sempre embaixo) */}
                 <div className="flex gap-3 mt-4">
+                  
                   {proj.site && (
                     <a
                       href={proj.site}
@@ -152,13 +114,19 @@ export default function Projetos() {
                       GitHub
                     </a>
                   )}
+
                 </div>
+
               </div>
+
             </div>
+
           </motion.div>
         ))}
 
       </div>
+
+      
 
       {/* Botão */}
       <motion.a
