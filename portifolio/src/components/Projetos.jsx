@@ -7,6 +7,7 @@ export default function Projetos() {
   const projetos = [
     {
       name: "Projeto: Costs",
+      descricao: "Sistema de orçamentos para gerenciar projetos e custos.",
       site: "https://projeto-costs-two.vercel.app/",
       github: "https://github.com/kayquemab/Projeto_Costs",
       video: "/video_costs.mp4",
@@ -90,6 +91,11 @@ export default function Projetos() {
                   {proj.name}
                 </h3>
 
+                {/* Nome do projeto */}
+                <p className="text-sm text-left dark:text-white flex-grow mt-4">
+                  <strong>Descrição:</strong> {proj.descricao}
+                </p>
+
                 {/* Botões (sempre embaixo) */}
                 <div className="flex gap-3 mt-4">
                   
@@ -125,8 +131,6 @@ export default function Projetos() {
         ))}
 
       </div>
-
-      
 
       {/* Botão */}
       <motion.a
